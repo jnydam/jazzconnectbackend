@@ -15,8 +15,6 @@ const io = new Server(server, {
   }
 });
 
-
-
 app.use(express.json());
 app.use(cors());
 app.use(require("./routes/eventWriteRoutes"));
@@ -34,14 +32,9 @@ let messages = [];
 
 io.on('connection', (socket) => {
 
-  console.log("A user has connected");
-
   socket.emit("greeting", "Welcome to JazzConnect messages!");
 
   socket.on('chatRoomMessage', (object) => {
-
-    console.log("Here is the server object");
-    console.log(object);
 
     messages.push(object);
 
@@ -52,8 +45,6 @@ io.on('connection', (socket) => {
 
 
 });
-
-
 
 
 server.listen(port, () => {

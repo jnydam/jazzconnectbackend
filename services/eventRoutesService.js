@@ -2,12 +2,6 @@ function processBodyToDoubleArray(array, venueIdParam) {
 
     let doubleArrayResult = [];
 
-    console.log("Hopefully this function can be exported");
-
-    console.log("These are the demoEvents");
-
-    console.log(array);
-
     for (let i = 0; i < array.length; i++) {
 
         let object = array[i];

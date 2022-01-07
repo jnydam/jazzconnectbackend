@@ -63,13 +63,10 @@ router.get('/venues/:id/fulldetails', (req, res) => {
     AND venues.id = ${id}`, (err, result) => {
 
         if (err) {
-            console.log(err);
-            console.log("The data could not be retrieved");
             res.sendStatus(503);
         }
 
         if (result) {
-            console.log('The data was retrieved');
             res.json(result);
         }
 
